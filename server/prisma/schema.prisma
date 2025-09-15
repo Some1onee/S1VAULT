@@ -1,0 +1,61 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite" // change to "mysql" later and update DATABASE_URL
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int       @id @default(autoincrement())
+  email        String    @unique
+  passwordHash String
+  masterSalt   String    // base64 salt for PBKDF2 on client
+  totpEnabled  Boolean   @default(false)
+  totpSecret   String?   // base32 TOTP secret (can be encrypted later)
+
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  entries      VaultEntry[]
+  recoveryCodes RecoveryCode[]
+}
+
+model VaultEntry {
+  id          Int       @id @default(autoincrement())
+  user        User      @relation(fields: [userId], references: [id])
+  userId      Int
+
+  title       String
+  domain      String?
+  url         String?
+  tags        String?   // comma-separated tags
+  favorite    Boolean   @default(false)
+  has2FA      Boolean   @default(false)
+  secretFingerprint String? // client-side SHA-256 hex truncated
+
+  strength    Int       @default(0)
+  lastUsedAt  DateTime?
+
+  // E2EE payload (ciphertext only)
+  cipherText  String
+  iv          String     // base64 IV for AES-GCM
+
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  @@index([userId])
+  @@index([userId, secretFingerprint])
+}
+
+model RecoveryCode {
+  id        Int      @id @default(autoincrement())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int
+  codeHash  String
+  used      Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+}

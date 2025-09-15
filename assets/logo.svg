@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" aria-labelledby="title desc" role="img">
+  <title>S1VAULT — Logo</title>
+  <desc>Symbole minimal bouclier + cadenas, style filaire premium, accent cyan/teal</desc>
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#14FFEC"/>
+      <stop offset="100%" stop-color="#15E3FF"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke="url(#g)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Bouclier -->
+    <path d="M64 10 L100 24 V58c0 26-16 43-36 56c-20-13-36-30-36-56V24L64 10z"/>
+    <!-- Cadenas stylisé -->
+    <rect x="44" y="54" width="40" height="30" rx="8"/>
+    <path d="M52 54v-6a12 12 0 0 1 24 0v6"/>
+    <!-- Trou de serrure -->
+    <circle cx="64" cy="69" r="4" fill="#14FFEC" stroke="none"/>
+  </g>
+</svg>

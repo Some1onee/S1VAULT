@@ -1,0 +1,49 @@
+# Node / Monorepo
+node_modules/
+**/node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Builds / caches
+/.cache/
+**/.cache/
+**/.vite/
+**/dist/
+**/build/
+**/.parcel-cache/
+
+# TypeScript
+*.tsbuildinfo
+
+# Env files
+.env
+.env.*
+server/.env
+client/.env
+client/.env.*
+!*.example
+
+# Prisma / SQLite dev db
+**/dev.db
+**/dev.db-journal
+server/.prisma/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Coverage
+coverage/
+
+# Netlify/others
+.netlify/

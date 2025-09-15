@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>S1VAULT — Planche UI Haute-Fidélité</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="board">
+    <header class="board-header">
+      <div class="brand">
+        <img src="./assets/logo.svg" alt="S1VAULT" class="brand-mark" />
+        <span class="brand-name">S1VAULT</span>
+      </div>
+      <div class="board-title">Planche UI — Gestionnaire de mots de passe — Dark Cyber Premium</div>
+      <div class="board-meta">1440×900 · Aucune watermark · Contrastes AA/AAA · Focus visibles</div>
+    </header>
+
+    <!-- Section 1: Vault Dashboard -->
+    <section class="section">
+      <h2 class="section-title">1) Vault Dashboard</h2>
+      <div class="browser-frame" aria-label="Aperçu d'une application web dans un navigateur">
+        <div class="browser-chrome">
+          <div class="traffic-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="address-bar">https://app.s1vault.io</div>
+          <div class="window-actions">
+            <button class="chrome-btn" aria-label="Minimiser"></button>
+            <button class="chrome-btn" aria-label="Agrandir"></button>
+            <button class="chrome-btn close" aria-label="Fermer"></button>
+          </div>
+        </div>
+        <div class="app-shell">
+          <!-- Topbar -->
+          <div class="topbar">
+            <div class="topbar-left">
+              <div class="logo-inline">
+                <img src="./assets/logo.svg" alt="S1VAULT" />
+                <span>S1VAULT</span>
+              </div>
+            </div>
+            <div class="topbar-center">
+              <div class="searchbar">
+                <input type="text" placeholder="Rechercher : comptes, domaines, tags…" aria-label="Recherche globale" />
+                <button class="icon ghost" aria-label="Rechercher" data-tooltip="Rechercher">
+                  <i data-feather="search"></i>
+                </button>
+              </div>
+            </div>
+            <div class="topbar-right">
+              <button class="btn primary" aria-label="Nouvelle entrée" data-tooltip="Nouvelle entrée">
+                <i data-feather="plus"></i>
+                <span>Ajouter</span>
+              </button>
+              <button class="icon ghost" aria-label="Notifications" data-tooltip="Notifications">
+                <i data-feather="bell"></i>
+              </button>
+              <div class="avatar" aria-label="Utilisateur" title="Utilisateur"></div>
+            </div>
+          </div>
+
+          <div class="layout">
+            <!-- Sidebar gauche -->
+            <aside class="sidebar" aria-label="Navigation">
+              <nav>
+                <a href="#" class="nav-item active"><i data-feather="grid"></i><span>Tableau de bord</span></a>
+                <a href="#" class="nav-item"><i data-feather="shield"></i><span>Coffre-fort</span></a>
+                <a href="#" class="nav-item"><i data-feather="share-2"></i><span>Partagés</span></a>
+                <a href="#" class="nav-item"><i data-feather="cpu"></i><span>Générateur</span></a>
+                <a href="#" class="nav-item"><i data-feather="lock"></i><span>Sécurité</span></a>
+                <a href="#" class="nav-item"><i data-feather="settings"></i><span>Paramètres</span></a>
+              </nav>
+            </aside>
+
+            <!-- Contenu principal: filtres + grille -->
+            <main class="content">
+              <div class="filters">
+                <div class="chips">
+                  <span class="chip">Pro</span>
+                  <span class="chip">Perso</span>
+                  <span class="chip">Partagé</span>
+                </div>
+                <div class="chips">
+                  <span class="chip strength strong">Fort</span>
+                  <span class="chip strength medium">Moyen</span>
+                  <span class="chip strength weak">Faible</span>
+                </div>
+                <div class="selects">
+                  <label class="select">
+                    <span>Tri</span>
+                    <select aria-label="Tri">
+                      <option>Nom A→Z</option>
+                      <option>Dernière utilisation</option>
+                      <option>Date de modification</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+
+              <div class="entry-grid skeleton-parent">
+                <!-- Carte 1 -->
+                <article class="entry-card">
+                  <div class="entry-head">
+                    <div class="favicon">G</div>
+                    <div class="meta">
+                      <div class="name">GitHub — perso</div>
+                      <div class="domain">github.com</div>
+                    </div>
+                    <button class="icon ghost fav" aria-label="Favori" data-tooltip="Favori"><i data-feather="star"></i></button>
+                  </div>
+                  <div class="tags"><span class="tag">Dev</span><span class="tag">Perso</span></div>
+                  <div class="strength-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="86">
+                    <div class="bar" style="width: 86%"></div>
+                    <span class="score">86</span>
+                  </div>
+                  <div class="last">Dernière utilisation : il y a 2 j · Modifié : 14/08</div>
+                  <div class="actions">
+                    <button class="icon ghost" data-copy="octocat@mail.com" data-tooltip="Copier l’identifiant"><i data-feather="user"></i></button>
+                    <button class="icon ghost" data-copy="••••••••" data-tooltip="Copier le mot de passe"><i data-feather="key"></i></button>
+                    <a class="icon ghost" href="#" data-tooltip="Ouvrir l’URL" aria-label="Ouvrir"><i data-feather="external-link"></i></a>
+                  </div>
+                </article>
+                <!-- Carte 2 -->
+                <article class="entry-card">
+                  <div class="entry-head">
+                    <div class="favicon">N</div>
+                    <div class="meta">
+                      <div class="name">Notion — pro</div>
+                      <div class="domain">notion.so</div>
+                    </div>
+                    <button class="icon ghost fav" aria-label="Favori"><i data-feather="star"></i></button>
+                  </div>
+                  <div class="tags"><span class="tag">Pro</span><span class="tag">Docs</span></div>
+                  <div class="strength-bar warn" aria-valuenow="62"><div class="bar" style="width: 62%"></div><span class="score">62</span></div>
+                  <div class="last">Dernière utilisation : il y a 6 h · Modifié : 10/09</div>
+                  <div class="actions">
+                    <button class="icon ghost" data-copy="john@corp.com"><i data-feather="user"></i></button>
+                    <button class="icon ghost" data-copy="••••••••"><i data-feather="key"></i></button>
+                    <a class="icon ghost" href="#"><i data-feather="external-link"></i></a>
+                  </div>
+                </article>
+                <!-- Carte 3 -->
+                <article class="entry-card">
+                  <div class="entry-head">
+                    <div class="favicon">B</div>
+                    <div class="meta">
+                      <div class="name">Banque — perso</div>
+                      <div class="domain">ma-banque.fr</div>
+                    </div>
+                    <button class="icon ghost fav" aria-label="Favori"><i data-feather="star"></i></button>
+                  </div>
+                  <div class="tags"><span class="tag">Finances</span><span class="tag">Perso</span></div>
+                  <div class="strength-bar danger" aria-valuenow="28"><div class="bar" style="width: 28%"></div><span class="score">28</span></div>
+                  <div class="last">Dernière utilisation : il y a 21 j · Modifié : 02/07</div>
+                  <div class="actions">
+                    <button class="icon ghost" data-copy="me@mail.com"><i data-feather="user"></i></button>
+                    <button class="icon ghost" data-copy="••••••••"><i data-feather="key"></i></button>
+                    <a class="icon ghost" href="#"><i data-feather="external-link"></i></a>
+                  </div>
+                </article>
+                <!-- Carte 4-6 (placeholders) -->
+                <article class="entry-card skeleton"></article>
+                <article class="entry-card skeleton"></article>
+                <article class="entry-card skeleton"></article>
+              </div>
+
+              <footer class="app-footer">Chiffré de bout en bout — WebCrypto AES‑256 — Auto‑hébergeable</footer>
+            </main>
+
+            <!-- Panneau droit Security Insights -->
+            <aside class="insights">
+              <h3>Security Insights</h3>
+              <div class="insights-grid">
+                <div class="insight-card danger">
+                  <div class="label">Mots de passe faibles</div>
+                  <div class="value">5</div>
+                </div>
+                <div class="insight-card warn">
+                  <div class="label">Réutilisés</div>
+                  <div class="value">8</div>
+                </div>
+                <div class="insight-card">
+                  <div class="label">Inactifs > 180j</div>
+                  <div class="value">12</div>
+                </div>
+                <div class="insight-card">
+                  <div class="label">Sans 2FA</div>
+                  <div class="value">23</div>
+                </div>
+              </div>
+              <div class="tip">
+                Renforcez votre sécurité.
+                <button class="btn outline" data-jump="#generator" aria-label="Générer un mot de passe fort">Générer un mot de passe fort</button>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Détail d'une entrée -->
+    <section class="section">
+      <h2 class="section-title">2) Détail d’une entrée</h2>
+      <div class="browser-frame">
+        <div class="browser-chrome">
+          <div class="traffic-dots"><span></span><span></span><span></span></div>
+          <div class="address-bar">https://app.s1vault.io/entry/gh-perso</div>
+          <div class="window-actions"><button class="chrome-btn"></button><button class="chrome-btn"></button><button class="chrome-btn close"></button></div>
+        </div>
+        <div class="app-shell entry-detail-shell">
+          <div class="entry-detail">
+            <div class="entry-header">
+              <div class="favicon">G</div>
+              <div>
+                <h3>GitHub — perso</h3>
+                <div class="domain">https://github.com</div>
+              </div>
+              <div class="spacer"></div>
+              <button class="icon ghost"><i data-feather="star"></i></button>
+              <button class="icon ghost"><i data-feather="external-link"></i></button>
+            </div>
+
+            <div class="form-grid">
+              <label class="field">
+                <span>Nom</span>
+                <input type="text" value="GitHub — perso" readonly>
+              </label>
+              <label class="field">
+                <span>URL</span>
+                <input type="url" value="https://github.com" readonly>
+              </label>
+              <label class="field">
+                <span>Identifiant</span>
+                <div class="input-with-actions">
+                  <input type="text" value="octocat@mail.com" readonly>
+                  <button class="icon ghost" data-copy="octocat@mail.com" data-tooltip="Copier"><i data-feather="copy"></i></button>
+                </div>
+              </label>
+              <label class="field">
+                <span>Mot de passe</span>
+                <div class="input-with-actions">
+                  <input type="password" value="Tr3sF0rt!2024" data-secret readonly>
+                  <button class="icon ghost toggle-visibility" data-tooltip="Afficher"><i data-feather="eye"></i></button>
+                  <button class="icon ghost" data-copy="Tr3sF0rt!2024" data-tooltip="Copier"><i data-feather="copy"></i></button>
+                </div>
+              </label>
+              <label class="field span-2">
+                <span>Notes</span>
+                <textarea rows="3" readonly>Accès perso. 2FA activé. Permissions: read-only. Pense-bête: vérifier SSH keys.</textarea>
+              </label>
+              <label class="field">
+                <span>Tags</span>
+                <div class="chips">
+                  <span class="chip">Dev</span><span class="chip">Perso</span>
+                </div>
+              </label>
+              <label class="field">
+                <span>Groupe</span>
+                <select><option>Perso</option><option>Pro</option></select>
+              </label>
+
+              <div class="field">
+                <span>Force</span>
+                <div class="strength-bar" aria-valuenow="86"><div class="bar" style="width:86%"></div><span class="score">86</span></div>
+                <ul class="reqs">
+                  <li class="ok">≥ 12 caractères</li>
+                  <li class="ok">Majuscules, minuscules</li>
+                  <li class="ok">Chiffres</li>
+                  <li class="warn">Symboles recommandés</li>
+                </ul>
+              </div>
+
+              <div class="field">
+                <button class="btn ghost reveal-timed" data-seconds="10">Révéler temporairement (10s)</button>
+                <div class="timer" aria-hidden="true"><div class="timer-bar"></div></div>
+              </div>
+
+              <div class="meta-line span-2">
+                <span>Dernière utilisation · il y a 2 j</span>
+                <span>Appareils récents: Web · Laptop</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="entry-aside">
+            <div class="aside-card">
+              <h4>Historique de versions</h4>
+              <ul class="versions">
+                <li><span>14/08</span> · Rotation périodique</li>
+                <li><span>10/07</span> · Ajout 2FA</li>
+                <li><span>21/05</span> · Création</li>
+              </ul>
+            </div>
+            <div class="aside-card">
+              <h4>Sécurité</h4>
+              <div class="fingerprint">Empreinte: 9f3a•••b8</div>
+              <div class="totp">
+                <div class="qr-placeholder" aria-label="QR TOTP"></div>
+                <div class="codes">
+                  <div class="code">843 112</div>
+                  <div class="recovery-title">Codes de récupération</div>
+                  <ul class="recovery">
+                    <li>R9G7-2QXA</li>
+                    <li>G6KL-8M2V</li>
+                    <li>J2NP-55ZQ</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Générateur de mots de passe -->
+    <section class="section" id="generator">
+      <h2 class="section-title">3) Générateur de mots de passe</h2>
+      <div class="browser-frame">
+        <div class="browser-chrome">
+          <div class="traffic-dots"><span></span><span></span><span></span></div>
+          <div class="address-bar">https://app.s1vault.io/generator</div>
+          <div class="window-actions"><button class="chrome-btn"></button><button class="chrome-btn"></button><button class="chrome-btn close"></button></div>
+        </div>
+        <div class="app-shell generator-shell">
+          <div class="generator">
+            <div class="controls">
+              <label class="field">
+                <span>Longueur</span>
+                <div class="range">
+                  <input type="range" min="8" max="64" value="16" id="lenRange" />
+                  <output id="lenOut">16</output>
+                </div>
+              </label>
+              <div class="toggles">
+                <label class="toggle"><input type="checkbox" id="optUpper" checked><span>Majuscules</span></label>
+                <label class="toggle"><input type="checkbox" id="optLower" checked><span>Minuscules</span></label>
+                <label class="toggle"><input type="checkbox" id="optDigits" checked><span>Chiffres</span></label>
+                <label class="toggle"><input type="checkbox" id="optSymbols" checked><span>Symboles</span></label>
+                <label class="toggle"><input type="checkbox" id="optAmbig"><span>Éviter O/0, l/I</span></label>
+                <label class="toggle"><input type="checkbox" id="optPronounce"><span>Prononçable</span></label>
+                <label class="toggle"><input type="checkbox" id="optExcludePatterns" checked><span>Exclure motifs communs</span></label>
+              </div>
+              <label class="field">
+                <span>Nombre d’exemplaires</span>
+                <select id="copies">
+                  <option>1</option>
+                  <option>3</option>
+                  <option selected>5</option>
+                  <option>10</option>
+                </select>
+              </label>
+              <div class="gen-actions">
+                <button class="btn primary" id="btnGenerate"><i data-feather="cpu"></i><span>Générer</span></button>
+                <button class="btn ghost" id="btnCopyAll"><i data-feather="copy"></i><span>Copier tout</span></button>
+              </div>
+            </div>
+            <div class="results">
+              <div class="strength-bar" id="genStrength"><div class="bar" style="width: 0%"></div><span class="score">0</span></div>
+              <ul class="outputs" id="outputs"></ul>
+              <div class="history">
+                <div class="title">Historique récent</div>
+                <ul id="history"></ul>
+              </div>
+              <div class="tips">Conseil: ne réutilisez jamais un mot de passe. Activez la MFA quand c’est possible.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Centre de sécurité -->
+    <section class="section">
+      <h2 class="section-title">4) Centre de sécurité</h2>
+      <div class="browser-frame">
+        <div class="browser-chrome">
+          <div class="traffic-dots"><span></span><span></span><span></span></div>
+          <div class="address-bar">https://app.s1vault.io/security</div>
+          <div class="window-actions"><button class="chrome-btn"></button><button class="chrome-btn"></button><button class="chrome-btn close"></button></div>
+        </div>
+        <div class="app-shell security-shell">
+          <div class="security-grid">
+            <div class="score">
+              <div class="donut" data-grade="A"></div>
+              <div class="score-label">Score global: A</div>
+            </div>
+            <div class="metric-cards">
+              <div class="metric-card"><div>Réutilisations</div><strong>8</strong></div>
+              <div class="metric-card warn"><div>Faibles</div><strong>5</strong></div>
+              <div class="metric-card"><div>Anciens > 180j</div><strong>12</strong></div>
+              <div class="metric-card"><div>Sans 2FA</div><strong>23</strong></div>
+            </div>
+            <div class="policy">
+              <h4>Politique personnalisée</h4>
+              <div class="policy-grid">
+                <label class="field"><span>Longueur minimale</span><input type="number" value="12" min="8" max="32"></label>
+                <label class="toggle"><input type="checkbox" checked><span>Complexité (U/l/0/!@#)</span></label>
+                <label class="toggle"><input type="checkbox" checked><span>Rotation tous les 180 j</span></label>
+                <label class="toggle"><input type="checkbox" checked><span>Verrouillage auto</span></label>
+                <label class="field"><span>Délai d’inactivité</span><select><option>5 min</option><option selected>10 min</option><option>15 min</option></select></label>
+              </div>
+            </div>
+            <div class="problems">
+              <div class="problems-head">
+                <div class="filters">
+                  <label class="select"><span>Sévérité</span><select><option>High</option><option selected>Med</option><option>Low</option></select></label>
+                  <label class="select"><span>Tag</span><select><option>Tous</option><option>Pro</option><option>Perso</option></select></label>
+                </div>
+                <button class="btn outline">Corriger</button>
+              </div>
+              <table class="table">
+                <thead><tr><th>Nom</th><th>Domaine</th><th>Tags</th><th>Force</th><th>Dernière utilisation</th><th>Actions</th></tr></thead>
+                <tbody>
+                  <tr><td>GitHub — perso</td><td>github.com</td><td><span class="tag">Dev</span></td><td><span class="badge strong">Fort</span></td><td>il y a 2 j</td><td><button class="icon ghost" data-tooltip="Voir"><i data-feather="eye"></i></button></td></tr>
+                  <tr><td>Banque — perso</td><td>ma-banque.fr</td><td><span class="tag">Finances</span></td><td><span class="badge weak">Faible</span></td><td>il y a 21 j</td><td><button class="icon ghost" data-tooltip="Corriger"><i data-feather="tool"></i></button></td></tr>
+                  <tr><td>Notion — pro</td><td>notion.so</td><td><span class="tag">Pro</span></td><td><span class="badge medium">Moyen</span></td><td>il y a 6 h</td><td><button class="icon ghost" data-tooltip="Renforcer"><i data-feather="zap"></i></button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Onboarding / Connexion / 2FA -->
+    <section class="section">
+      <h2 class="section-title">5) Flow — Onboarding / Connexion / 2FA</h2>
+      <div class="browser-frame">
+        <div class="browser-chrome">
+          <div class="traffic-dots"><span></span><span></span><span></span></div>
+          <div class="address-bar">https://app.s1vault.io/welcome</div>
+          <div class="window-actions"><button class="chrome-btn"></button><button class="chrome-btn"></button><button class="chrome-btn close"></button></div>
+        </div>
+        <div class="app-shell flow-shell">
+          <div class="flow-steps">
+            <div class="flow-card">
+              <h3>Bienvenue dans S1VAULT</h3>
+              <p>Sécurité de bout en bout. Auto‑hébergeable. Contrôle total.</p>
+              <div class="illustration grid"></div>
+            </div>
+            <div class="flow-card">
+              <h3>Créer un coffre</h3>
+              <label class="field"><span>Mot de passe maître</span><input type="password" value="" placeholder="Phrase secrète longue"></label>
+              <div class="strength-bar"><div class="bar" style="width: 40%"></div><span class="score">40</span></div>
+              <div class="tip tiny">Conseil: utilisez une phrase secrète mémorable et unique.</div>
+              <div class="warning tiny">Sauvegardez votre phrase mnémotechnique. Elle ne peut pas être récupérée.</div>
+            </div>
+            <div class="flow-card">
+              <h3>Connexion</h3>
+              <label class="field"><span>Mot de passe maître</span><div class="input-with-actions"><input type="password"><button class="icon ghost"><i data-feather="eye"></i></button></div></label>
+              <button class="btn primary">Se connecter</button>
+              <div class="error tiny" role="alert">Mot de passe incorrect.</div>
+            </div>
+            <div class="flow-card">
+              <h3>2FA TOTP</h3>
+              <div class="qr-placeholder"></div>
+              <div class="code-inputs" aria-label="Code 6 chiffres">
+                <input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1">
+              </div>
+              <div class="success tiny">Vérification réussie.</div>
+            </div>
+            <div class="flow-card">
+              <h3>Récupération d’urgence</h3>
+              <ul class="recovery">
+                <li>R9G7-2QXA</li><li>G6KL-8M2V</li><li>J2NP-55ZQ</li><li>TT3S-H912</li>
+              </ul>
+              <div class="tip tiny">Enregistrez ou imprimez ces codes et conservez‑les en lieu sûr.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Design System -->
+    <section class="section">
+      <h2 class="section-title">6) Design System — S1VAULT</h2>
+      <div class="design-system">
+        <div class="ds-block colors">
+          <h3>Tokens Couleurs</h3>
+          <div class="swatches">
+            <div class="sw" style="--c: var(--bg)"><span>#0A0F1F</span><small>bg</small></div>
+            <div class="sw" style="--c: var(--surface)"><span>#0F1629</span><small>surface</small></div>
+            <div class="sw" style="--c: var(--border)"><span>#1A2440</span><small>border</small></div>
+            <div class="sw" style="--c: var(--text)"><span>#E6F1FF</span><small>text-primary</small></div>
+            <div class="sw" style="--c: var(--muted)"><span>#9FB3C8</span><small>text-muted</small></div>
+            <div class="sw" style="--c: var(--accent)"><span>#14FFEC</span><small>accent</small></div>
+            <div class="sw" style="--c: var(--accent-alt)"><span>#15E3FF</span><small>accent-alt</small></div>
+            <div class="sw" style="--c: var(--success)"><span>#00FF88</span><small>success</small></div>
+            <div class="sw" style="--c: var(--warning)"><span>#FFB020</span><small>warning</small></div>
+            <div class="sw" style="--c: var(--danger)"><span>#FF4ECD</span><small>danger</small></div>
+          </div>
+        </div>
+        <div class="ds-block typography">
+          <h3>Typographies</h3>
+          <div class="typo-grid">
+            <div class="t t32">Inter/Manrope — 32</div>
+            <div class="t t24">Inter/Manrope — 24</div>
+            <div class="t t18">Inter/Manrope — 18</div>
+            <div class="t t16">Inter/Manrope — 16</div>
+            <div class="t t14">Inter/Manrope — 14</div>
+            <div class="t mono">JetBrains Mono — secrets()</div>
+          </div>
+        </div>
+        <div class="ds-block buttons">
+          <h3>Boutons</h3>
+          <div class="btn-row">
+            <button class="btn primary"><i data-feather="plus"></i><span>Primaire</span></button>
+            <button class="btn outline"><span>Secondaire</span></button>
+            <button class="btn ghost"><span>Ghost</span></button>
+            <button class="btn danger"><span>Danger</span></button>
+            <button class="btn" disabled><span>Désactivé</span></button>
+          </div>
+        </div>
+        <div class="ds-block inputs">
+          <h3>Inputs</h3>
+          <div class="input-row">
+            <input type="text" placeholder="Texte" />
+            <div class="input-with-actions"><input type="password" placeholder="Mot de passe" /><button class="icon ghost"><i data-feather="eye"></i></button></div>
+            <label class="select"><span>Select</span><select><option>Option</option></select></label>
+            <span class="chip">Tag</span>
+            <input type="range" />
+            <label class="toggle"><input type="checkbox" checked><span>Toggle</span></label>
+          </div>
+        </div>
+        <div class="ds-block cards">
+          <h3>Cartes & Badges</h3>
+          <div class="card-row">
+            <span class="badge strong">Fort</span>
+            <span class="badge medium">Moyen</span>
+            <span class="badge weak">Faible</span>
+            <div class="toast success">Copié</div>
+            <div class="tooltip-demo" data-tooltip="Astuce discrète">Tooltip</div>
+          </div>
+        </div>
+        <div class="ds-block table-graphs">
+          <h3>Table & Graphiques</h3>
+          <table class="table small">
+            <thead><tr><th>Nom</th><th>Force</th></tr></thead>
+            <tbody><tr><td>Exemple</td><td><span class="badge strong">Fort</span></td></tr></tbody>
+          </table>
+          <div class="graphs-row">
+            <div class="donut small" data-grade="B"></div>
+            <div class="bar-chart">
+              <div class="bar" style="--v:70%"></div>
+              <div class="bar" style="--v:40%"></div>
+              <div class="bar" style="--v:85%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="ds-block states">
+          <h3>États</h3>
+          <div class="states-row">
+            <div class="skeleton-block"></div>
+            <div class="empty">Aucune donnée</div>
+            <div class="error">Erreur — message clair</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Logo & Icône -->
+    <section class="section">
+      <h2 class="section-title">7) Logo & Icône — S1VAULT</h2>
+      <div class="brand-block">
+        <div class="logo-row">
+          <img src="./assets/logo.svg" alt="Logo vectoriel S1VAULT" class="logo-v" />
+          <div class="logo-inline big">
+            <img src="./assets/logo.svg" alt="S1VAULT" />
+            <span>S1VAULT</span>
+          </div>
+        </div>
+        <div class="icon-row">
+          <img src="./assets/icon-app.svg" alt="Icône d’application" class="app-icon" />
+          <div class="icon-note">Icône 1024×1024 · coins radius 20% · glow cyan interne</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="toast-stack" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
